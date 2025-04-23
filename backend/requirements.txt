@@ -1,0 +1,2 @@
+# This is the requirements.txt file for the backend of the hedgehog-lab project.
+# Add your Python dependencies below, one per line.
