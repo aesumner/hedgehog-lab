@@ -54,7 +54,7 @@ resource "azurerm_container_app" "frontend" {
   registry {
     server   = azurerm_container_registry.acr.login_server
     username = azurerm_container_registry.acr.admin_username
-    password = azurerm_container_registry.acr.admin_password
+    #password = azurerm_container_registry.acr.admin_password
   }
 
   ingress {
@@ -86,11 +86,13 @@ resource "azurerm_container_app" "backend" {
       }
     }
   }
-
+  # Would likey authenticate with ACR using managed identity in production
+  # but for simplicity, using admin credentials here
+  # Uncomment the password lines if you want to use admin credentials
   registry {
     server   = azurerm_container_registry.acr.login_server
     username = azurerm_container_registry.acr.admin_username
-    password = azurerm_container_registry.acr.admin_password
+    #password = azurerm_container_registry.acr.admin_password
   }
 
   ingress {
